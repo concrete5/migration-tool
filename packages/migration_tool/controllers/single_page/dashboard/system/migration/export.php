@@ -4,7 +4,6 @@ namespace Concrete\Package\MigrationTool\Controller\SinglePage\Dashboard\System\
 use Concrete\Core\Application\EditResponse;
 use Concrete\Core\File\File;
 use Concrete\Core\Page\Controller\DashboardSitePageController;
-use Concrete\Package\MigrationTool\Page\Controller\DashboardPageController;
 use Doctrine\Common\Collections\ArrayCollection;
 use PortlandLabs\Concrete5\MigrationTool\Entity\Export\Batch;
 use PortlandLabs\Concrete5\MigrationTool\Entity\Export\ObjectCollection;
