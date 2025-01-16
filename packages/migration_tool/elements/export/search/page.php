@@ -10,10 +10,11 @@ $pagetypes = array('' => t('** Choose a page type'));
 foreach ($list as $type) {
     $pagetypes[$type->getPageTypeID()] = $type->getPageTypeDisplayName();
 }
-if (version_compare(APP_VERSION, '8.5.19') <= 0) {
-    $whyNoAdditionalTypes = t("Your version of concrete5 doesn't support exporting external links and aliases: please upgrade to a newer version.");
-} else {
+// Let's check if we have a class that has been introduced in the core when we added support for exporting page aliases and external links
+if (class_exists('Concrete\Core\Backup\ContentImporter\Exception\MissingPageAtPathException')) {
     $whyNoAdditionalTypes = '';
+} else {
+    $whyNoAdditionalTypes = t("Your version of concrete5 doesn't support exporting external links and aliases: please upgrade to a newer version.");
 }
 ?>
 <div class="form-group">
